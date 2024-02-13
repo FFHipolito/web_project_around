@@ -1,7 +1,12 @@
 .header {
-  width: 880px;
-  height: 74px;
-  margin: auto;
-  padding: 45px 0 0;
+  max-width: 880px;
+  width: 100%;
+  padding: 45px 0;
   border-bottom: 1px solid #545454;
+}
+
+@media only screen and (max-width: 1000px) {
+  .header {
+    width: 85%;
+  }
 }

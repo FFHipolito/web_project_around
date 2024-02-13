@@ -1,54 +1,108 @@
 .profile {
-  width: 880px;
-  height: 120px;
-  margin: 40px auto 0;
+  margin: 45px 0;
   display: flex;
-  gap: 30px;
-}
-
-.profile__image {
-  width: 188.75px;
-  height: 127.5px;
-  border-radius: 100%;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .profile__info {
-  width: 415px;
-  height: 77px;
-  align-self: center;
   display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 16px;
 }
 
-.profile__info-title {
+.profile__image {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+}
+
+.profile__info-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 30px;
+}
+
+.profile__title-container {
+  display: flex;
+  margin-bottom: 12px;
+}
+
+.profile__title {
   margin: 0;
   font-weight: 500;
   font-size: 42px;
   line-height: 48px;
 }
 
-.profile__info-button {
+.profile__title-button {
   width: 24px;
   height: 24px;
   background-color: black;
   border: 1px solid #ffff;
   align-self: center;
+  margin: 6px 0 0 18px;
   padding: 0;
 }
 
-.profile__info-subtitle {
+.profile__subtitle {
   margin: 0;
 }
 
 .profile__addbutton {
   width: 150px;
   height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: black;
   border: 2px solid #ffff;
   border-radius: 2px;
-  align-self: center;
-  margin-left: 100px;
   padding: 0;
+}
+
+@media only screen and (max-width: 1000px) {
+  .profile {
+    width: 85%;
+    margin: 45px auto;
+  }
+  .profile__info-container {
+    margin: 0 3px;
+  }
+}
+
+@media only screen and (max-width: 683px) {
+  .profile,
+  .profile__info {
+    flex-direction: column;
+  }
+  .profile__info {
+    align-items: center;
+  }
+  .profile__info-container {
+    text-align: center;
+    margin: 30px 0;
+  }
+  .profile__title {
+    font-size: 22px;
+    line-height: 22.63px;
+  }
+  .profile__title-button {
+    width: 16px;
+    height: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 0 0 8px;
+  }
+  .profile__subtitle {
+    font-size: 14px;
+    line-height: 16.94px;
+  }
+  .profile__addbutton {
+    width: 100%;
+  }
+  .profile__addbutton-img {
+    width: 16px;
+    height: 16px;
+  }
 }
