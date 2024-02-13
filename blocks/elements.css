@@ -1,0 +1,47 @@
+.elements {
+  width: 880px;
+  height: 743px;
+  margin: 50px auto 67px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 17px;
+}
+
+.elements__card {
+  height: 361px;
+  background-color: white;
+  color: black;
+  border-radius: 10px 10px;
+}
+
+.elements__image {
+  width: 282px;
+  height: 282px;
+}
+
+.elements__group {
+  width: 246px;
+  height: 23px;
+  margin: 25px 15px 31px 21px;
+  display: flex;
+  justify-content: center;
+  justify-content: space-between;
+}
+
+.elements__title {
+  margin: 0;
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 29.05px;
+}
+
+.elements__amei-button {
+  border: none;
+  background-color: white;
+}
+
+.elements__amei-button:hover {
+  opacity: 0.5;
+}
