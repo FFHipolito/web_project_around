@@ -42,9 +42,15 @@
   margin-bottom: 30px;
   border: none;
   border-bottom: 1px solid black;
-  padding-bottom: 13px;
+  padding: 13px 0 7px;
   font-size: 14px;
   font-weight: 400;
+}
+
+.popup__input-text:focus {
+  box-shadow: 0 0 0 0;
+  border: 1px solid black;
+  outline: 0;
 }
 
 .popup__input-submit {

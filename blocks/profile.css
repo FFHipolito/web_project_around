@@ -84,7 +84,11 @@
     margin: 45px auto;
   }
   .profile__info-container {
-    margin: 0 3px;
+    margin: 0px 30px;
+  }
+
+  .profile__title {
+    font-size: 30px;
   }
 }
 
