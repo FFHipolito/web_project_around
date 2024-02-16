@@ -10,3 +10,9 @@
     width: 85%;
   }
 }
+
+@media only screen and (max-width: 683px) {
+  .header {
+    padding: 32px 0;
+  }
+}

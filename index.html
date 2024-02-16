@@ -51,36 +51,24 @@
         <div class="elements">
           <div class="elements__card">
             <img
-              src="./images/lago amanhecer.png"
+              src="./images/lago-amanhecer.png"
               alt="Lago descendo a montanha em meio as árvores"
               class="elements__image"
             />
             <div class="elements__group">
               <h2 class="elements__title">Vale de Yosemite</h2>
-              <button class="elements__amei-button" type="button">
-                <img
-                  src="./images/amei.png"
-                  alt="Botão com um coração dentro para dar amei"
-                  class="elements__amei"
-                />
-              </button>
+              <button class="elements__like-button" type="button"></button>
             </div>
           </div>
           <div class="elements__card">
             <img
-              src="./images/lago frio.png"
+              src="./images/lago-frio.png"
               alt="Lago com água de cor cristalina e calmo"
               class="elements__image"
             />
             <div class="elements__group">
               <h2 class="elements__title">Lago Louise</h2>
-              <button class="elements__amei-button" type="button">
-                <img
-                  src="./images/amei.png"
-                  alt="Botão com um coração dentro para dar amei"
-                  class="elements__amei"
-                />
-              </button>
+              <button class="elements__like-button" type="button"></button>
             </div>
           </div>
           <div class="elements__card">
@@ -91,68 +79,77 @@
             />
             <div class="elements__group">
               <h2 class="elements__title">Montanhas Care...</h2>
-              <button class="elements__amei-button" type="button">
-                <img
-                  src="./images/amei.png"
-                  alt="Botão com um coração dentro para dar amei"
-                  class="elements__amei"
-                />
-              </button>
+              <button class="elements__like-button" type="button"></button>
             </div>
           </div>
           <div class="elements__card">
             <img
-              src="./images/lago a noite.png"
+              src="./images/lago-a-noite.png"
               alt="Montanhas com neve e céu extremamente estrelado"
               class="elements__image"
             />
             <div class="elements__group">
               <h2 class="elements__title">Latemar</h2>
-              <button class="elements__amei-button" type="button">
-                <img
-                  src="./images/amei.png"
-                  alt="Botão com um coração dentro para dar amei"
-                  class="elements__amei"
-                />
-              </button>
+              <button class="elements__like-button" type="button"></button>
             </div>
           </div>
           <div class="elements__card">
             <img
-              src="./images/lago calmo.png"
+              src="./images/lago-calmo.png"
               alt="Lago calmo com uma montanha gelada ao fundo"
               class="elements__image"
             />
             <div class="elements__group">
-              <h2 class="elements__title">Parque Nacional...</h2>
-              <button class="elements__amei-button" type="button">
-                <img
-                  src="./images/amei.png"
-                  alt="Botão com um coração dentro para dar amei"
-                  class="elements__amei"
-                />
-              </button>
+              <h2 class="elements__title">Parque Nacional da Vanoise</h2>
+              <button class="elements__like-button" type="button"></button>
             </div>
           </div>
           <div class="elements__card">
             <img
-              src="./images/lago nas montanhas.png"
+              src="./images/lago-nas-montanhas.png"
               alt="Lago com barcos de madeira e montanhas totalmentes congelantes ao fundo"
               class="elements__image"
             />
             <div class="elements__group">
               <h2 class="elements__title">Lago di Braies</h2>
-              <button class="elements__amei-button" type="button">
-                <img
-                  src="./images/amei.png"
-                  alt="Botão com um coração dentro para dar amei"
-                  class="elements__amei"
-                />
-              </button>
+              <button class="elements__like-button" type="button"></button>
             </div>
+          </div>
+        </div>
+
+        <div class="popup">
+          <div class="popup__container">
+            <p class="popup__title">Editar perfil</p>
+            <form class="popup__form">
+              <input
+                class="popup__input-text"
+                id="name"
+                type="text"
+                name="name"
+                placeholder="Nome"
+                required
+              />
+              <input
+                class="popup__input-text"
+                id="about"
+                type="text"
+                name="about"
+                placeholder="Sobre mim"
+                required
+              />
+              <input class="popup__input-submit" type="submit" value="Salvar" />
+            </form>
+            <button class="popup_close-button">
+              <img
+                src="/images/close-icon.png"
+                alt="Fechar janela editar perfil"
+              />
+            </button>
           </div>
         </div>
       </main>
     </div>
+
+    <script src="./scripts/script.js"></script>
   </body>
 </html>

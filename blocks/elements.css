@@ -29,24 +29,34 @@
 }
 
 .elements__title {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 215px;
   margin: 0;
   font-weight: 900;
   font-size: 24px;
   line-height: 29.05px;
 }
 
-.elements__amei {
-  align-self: center;
-}
-
-.elements__amei-button {
+.elements__like-button {
   border: none;
-  background-color: white;
-  display: flex;
+  width: 22px;
+  height: 22px;
+  padding: 0;
+  background-color: transparent;
+  background-image: url("../images/like.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
 }
 
-.elements__amei-button:hover {
+.elements__like-button:hover {
   opacity: 0.5;
+}
+
+.active {
+  background-image: url("../images/like-active.png");
 }
 
 @media only screen and (max-width: 1000px) {

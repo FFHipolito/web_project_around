@@ -20,6 +20,7 @@
   flex-direction: column;
   justify-content: center;
   margin: 0 30px;
+  max-width: 415px;
 }
 
 .profile__title-container {
@@ -34,6 +35,13 @@
   line-height: 48px;
 }
 
+.profile__title,
+.profile__subtitle {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
 .profile__title-button {
   width: 24px;
   height: 24px;
@@ -42,6 +50,11 @@
   align-self: center;
   margin: 6px 0 0 18px;
   padding: 0;
+  cursor: pointer;
+}
+
+.profile__title-button:hover {
+  opacity: 0.7;
 }
 
 .profile__subtitle {
@@ -58,6 +71,11 @@
   border: 2px solid #ffff;
   border-radius: 2px;
   padding: 0;
+  cursor: pointer;
+}
+
+.profile__addbutton:hover {
+  opacity: 0.7;
 }
 
 @media only screen and (max-width: 1000px) {
