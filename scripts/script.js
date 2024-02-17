@@ -1,67 +1,52 @@
-// Vamos encontrar o formulário no DOM
-let formElement = document.querySelector(".popup__form"); // Use o método querySelector()
-// Em seguida vem o handler do submit
-// ainda não vai enviar para lugar nenhum
+const editButtonElement = document.querySelector(".profile__title-button");
+const formElement = document.querySelector(".popup__form");
+const popupElement = document.querySelector(".popup");
+const popupCloseButtonElement = document.querySelector(".popup__close-button");
+const likeButtonElements = document.querySelectorAll(".elements__like-button");
 
-// Observe que o nome da função começa com um verbo
-// e descreve exatamente o que a função faz
 function handleProfileFormSubmit(evt) {
-  // Esta linha impede o navegador
-  // de enviar o formulário da forma padrão.
   evt.preventDefault();
-  // Fazendo isso, podemos definir nossa própria forma de enviar o formulário.
-  // Explicaremos em mais detalhes posteriormente.
 
-  // Vamos encontrar os campos de formulário do DOM
-  let nameInput = document.querySelector("#name"); // Use querySelector()
-  let jobInput = document.querySelector("#about"); // Use querySelector()
+  const nameInput = document.querySelector("#name");
+  const jobInput = document.querySelector("#about");
 
-  // Pegue os valores de cada campo do valor da propriedade correspondente
+  const newName = nameInput.value;
+  const newJob = jobInput.value;
 
-  let newName = nameInput.value;
-  let newJob = jobInput.value;
-
-  // Selecione os elementos aos quais os valores dos campos serão inseridos
-
-  let nameInputCurrent = document.querySelector(".profile__title"); // Use querySelector()
-  let jobInputCurrent = document.querySelector(".profile__subtitle"); // Use querySelector()
-
-  // Insira novos valores usando a propriedade textContent
+  const nameInputCurrent = document.querySelector(".profile__title");
+  const jobInputCurrent = document.querySelector(".profile__subtitle");
 
   nameInputCurrent.textContent = newName;
   jobInputCurrent.textContent = newJob;
   closePopup();
 }
 
-// Conecte o handler ao formulário:
-// ele vai observar o evento de submit
-formElement.addEventListener("submit", handleProfileFormSubmit);
-
-// abre e fecha popup editar perfil
-let editButtonElement = document.querySelector(".profile__title-button");
-
-let popupElement = document.querySelector(".popup");
-let popupCloseButtonElement = document.querySelector(".popup_close-button");
-
 function openPopup() {
+  const nameInput = document.querySelector("#name");
+  const jobInput = document.querySelector("#about");
+
+  const nameInputCurrent = document.querySelector(".profile__title");
+  const jobInputCurrent = document.querySelector(".profile__subtitle");
+
+  nameInput.value = nameInputCurrent.textContent;
+  jobInput.value = jobInputCurrent.textContent;
+
   popupElement.classList.add("popup_opened");
+
+  formElement.addEventListener("submit", handleProfileFormSubmit);
+  popupCloseButtonElement.addEventListener("click", closePopup);
 }
 
 function closePopup() {
   popupElement.classList.remove("popup_opened");
 }
 
-editButtonElement.addEventListener("click", openPopup);
-popupCloseButtonElement.addEventListener("click", closePopup);
-
-// ativar like e deslike
-let likeButtonElements = document.querySelectorAll(".elements__like-button");
-
 function toggleLikeDislike(evt) {
-  let likeButtonClickedElement = evt.target;
+  const likeButtonClickedElement = evt.target;
   likeButtonClickedElement.classList.toggle("active");
 }
 
+editButtonElement.addEventListener("click", openPopup);
 likeButtonElements.forEach((el) =>
   el.addEventListener("click", toggleLikeDislike)
 );
