@@ -1,7 +1,11 @@
-const editButtonElement = document.querySelector(".profile__title-button");
-const formElement = document.querySelector(".popup__form");
-const popupElement = document.querySelector(".popup");
-const popupCloseButtonElement = document.querySelector(".popup__close-button");
+const editProfileButtonElement = document.querySelector(
+  ".profile__title-button"
+);
+const editProfileFormElement = document.querySelector(".popup__form");
+const editProfilePopupElement = document.querySelector(".popup");
+const editProfileCloseButtonElement = document.querySelector(
+  ".popup__close-button"
+);
 const likeButtonElements = document.querySelectorAll(".elements__like-button");
 
 function handleProfileFormSubmit(evt) {
@@ -18,10 +22,10 @@ function handleProfileFormSubmit(evt) {
 
   nameInputCurrent.textContent = newName;
   jobInputCurrent.textContent = newJob;
-  closePopup();
+  closeEditProfilePopup();
 }
 
-function openPopup() {
+function openEditProfilePopup() {
   const nameInput = document.querySelector("#name");
   const jobInput = document.querySelector("#about");
 
@@ -31,14 +35,22 @@ function openPopup() {
   nameInput.value = nameInputCurrent.textContent;
   jobInput.value = jobInputCurrent.textContent;
 
-  popupElement.classList.add("popup_opened");
+  editProfilePopupElement.classList.add("popup_opened");
 
-  formElement.addEventListener("submit", handleProfileFormSubmit);
-  popupCloseButtonElement.addEventListener("click", closePopup);
+  editProfileFormElement.addEventListener("submit", handleProfileFormSubmit);
+  editProfileCloseButtonElement.addEventListener(
+    "click",
+    closeEditProfilePopup
+  );
 }
 
-function closePopup() {
-  popupElement.classList.remove("popup_opened");
+function closeEditProfilePopup() {
+  editProfilePopupElement.classList.remove("popup_opened");
+  editProfileCloseButtonElement.removeEventListener(
+    "click",
+    closeEditProfilePopup
+  );
+  editProfileFormElement.removeEventListener("submit", handleProfileFormSubmit);
 }
 
 function toggleLikeDislike(evt) {
@@ -46,7 +58,7 @@ function toggleLikeDislike(evt) {
   likeButtonClickedElement.classList.toggle("active");
 }
 
-editButtonElement.addEventListener("click", openPopup);
+editProfileButtonElement.addEventListener("click", openEditProfilePopup);
 likeButtonElements.forEach((el) =>
   el.addEventListener("click", toggleLikeDislike)
 );
