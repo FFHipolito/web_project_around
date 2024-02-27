@@ -68,7 +68,7 @@
   opacity: 0.7;
 }
 
-.popup_close-button {
+.popup__close-button {
   position: absolute;
   top: -40px;
   right: -40px;
@@ -83,7 +83,7 @@
   cursor: pointer;
 }
 
-.popup_close-button:hover {
+.popup__close-button:hover {
   opacity: 0.7;
 }
 
@@ -92,7 +92,7 @@
     width: 238px;
     padding: 22px;
   }
-  .popup_close-button {
+  .popup__close-button {
     top: -46px;
     right: 10px;
     width: 26px;
