@@ -149,6 +149,41 @@
             </button>
           </div>
         </div>
+
+        <div class="popup">
+          <div class="popup__container">
+            <p class="popup__title">Novo local</p>
+            <form class="popup__form">
+              <input
+                class="popup__input-text"
+                id="titulo"
+                type="text"
+                name="titulo"
+                value="titulo"
+                placeholder="Título"
+                required
+              />
+              <input
+                class="popup__input-text"
+                id="url"
+                type="url"
+                name="url"
+                value="url"
+                placeholder="Link da imagem"
+                pattern="https://.*"
+                size="30"
+                required
+              />
+              <input class="popup__input-submit" type="submit" value="Criar" />
+            </form>
+            <button class="popup_close-button">
+              <img
+                src="/images/close-icon.png"
+                alt="Fechar janela novo local"
+              />
+            </button>
+          </div>
+        </div>
       </main>
       <div class="footer">
         <p class="footer__paragraph">© 2024 Around The U.S.</p>
