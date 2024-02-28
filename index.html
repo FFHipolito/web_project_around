@@ -39,7 +39,7 @@
               <p class="profile__subtitle">Explorador</p>
             </div>
           </div>
-          <button class="profile__addbutton">
+          <button class="profile__addbutton" type="button">
             <img
               src="./images/mais.png"
               alt="Botão com o sinal de mais dentro"
@@ -148,16 +148,15 @@
           </div>
         </div>
 
-        <div class="popup">
+        <div class="popup popup__card">
           <div class="popup__container">
             <p class="popup__title">Novo local</p>
-            <form class="popup__form">
+            <form class="popup__form popup__form-card">
               <input
                 class="popup__input-text"
-                id="titulo"
+                id="title"
                 type="text"
-                name="titulo"
-                value="titulo"
+                name="title"
                 placeholder="Título"
                 required
               />
@@ -166,7 +165,6 @@
                 id="url"
                 type="url"
                 name="url"
-                value="url"
                 placeholder="Link da imagem"
                 pattern="https://.*"
                 size="30"
@@ -174,7 +172,7 @@
               />
               <input class="popup__input-submit" type="submit" value="Criar" />
             </form>
-            <button class="popup_close-button">
+            <button class="popup__close-button close__card-button">
               <img
                 src="/images/close-icon.png"
                 alt="Fechar janela novo local"
