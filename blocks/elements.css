@@ -1,4 +1,4 @@
-.elements {
+.card__container {
   margin: 50px auto 67px;
   display: flex;
   flex-direction: row;
@@ -12,11 +12,30 @@
   background-color: white;
   color: black;
   border-radius: 10px 10px;
+  position: relative;
+}
+
+.elements__button-trash {
+  width: 18px;
+  height: 20px;
+  background-color: transparent;
+  background-image: url(../Trash.png);
+  background-size: cover;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+
+.elements__button-trash:hover {
+  opacity: 0.6;
 }
 
 .elements__image {
   width: 282px;
   height: 282px;
+  object-fit: cover;
 }
 
 .elements__group {

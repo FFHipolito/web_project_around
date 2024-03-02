@@ -7,8 +7,6 @@ const editProfileCloseButtonElement = document.querySelector(
   ".popup__close-button"
 );
 
-const likeButtonElements = document.querySelectorAll(".elements__like-button");
-
 function handleProfileFormSubmit(evt) {
   evt.preventDefault();
 
@@ -100,15 +98,81 @@ function closeEditCardPopup() {
   editCardFormElement.removeEventListener("submit", handleCardFormSubmit);
 }
 
-function toggleLikeDislike(evt) {
-  const likeButtonClickedElement = evt.target;
-  likeButtonClickedElement.classList.toggle("active");
-}
-
 editProfileButtonElement.addEventListener("click", openEditProfilePopup);
 
 editCardButtonElement.addEventListener("click", openEditCardPopup);
 
-likeButtonElements.forEach((el) =>
-  el.addEventListener("click", toggleLikeDislike)
-);
+const container = document.querySelector(".card__container");
+const addButton = document.querySelector(".input__card_action_button");
+
+const initialCards = [
+  {
+    name: "Vale de Yosemite",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_yosemite.jpg",
+  },
+  {
+    name: "Lago Louise",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_lake-louise.jpg",
+  },
+  {
+    name: "Montanhas Carecas",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_bald-mountains.jpg",
+  },
+  {
+    name: "Latemar",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_latemar.jpg",
+  },
+  {
+    name: "Parque Nacional da Vanoise ",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_vanoise.jpg",
+  },
+  {
+    name: "Lago di Braies",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_lago.jpg",
+  },
+];
+
+function addCard(card) {
+  const cardTemplate = document
+    .querySelector("#elements")
+    .content.querySelector(".elements__card");
+  const cardElement = cardTemplate.cloneNode(true);
+  cardElement.querySelector(".elements__image").setAttribute("src", card.link);
+  cardElement.querySelector(".elements__image").setAttribute("alt", card.name);
+  cardElement.querySelector(".elements__title").textContent = card.name;
+  cardElement
+    .querySelector(".elements__button-trash")
+    .addEventListener("click", (evt) => {
+      evt.target.parentElement.remove();
+    });
+
+  cardElement
+    .querySelector(".elements__like-button")
+    .addEventListener("click", (evt) => {
+      evt.target.classList.toggle("active");
+    });
+
+  return cardElement;
+}
+for (const card of initialCards) {
+  const cardItem = addCard(card);
+  container.append(cardItem);
+}
+
+function addNewCard() {
+  const title = document.querySelector("#title");
+  const url = document.querySelector("#url");
+  const cardItem = addCard({
+    name: title.value,
+    link: url.value,
+  });
+  container.append(cardItem);
+  title.value = "";
+  url.value = "";
+}
+
+addButton.addEventListener("click", (event) => {
+  event.preventDefault();
+  addNewCard();
+  closeEditCardPopup();
+});
