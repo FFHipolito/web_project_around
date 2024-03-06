@@ -84,3 +84,10 @@
     justify-content: center;
   }
 }
+
+@media only screen and (max-width: 683px) {
+  .card__container {
+    width: 85%;
+    justify-content: center;
+  }
+}

@@ -51,13 +51,7 @@
         <div class="card__container"></div>
         <template id="elements">
           <div class="elements__card">
-            <button id="button" class="elements__button-trash">
-              <!-- <img
-                src="./Trash.png"
-                alt="Botão com uma lixeira dentro"
-                class="elements__trash-img"
-              /> -->
-            </button>
+            <button id="button" class="elements__button-trash"></button>
             <img class="elements__image" src="" alt="" />
             <div class="elements__group">
               <h2 class="elements__title"></h2>
@@ -127,11 +121,27 @@
               <img
                 src="/images/close-icon.png"
                 alt="Fechar janela novo local"
+                class="close__card-image"
+              />
+            </button>
+          </div>
+        </div>
+
+        <div class="popup popup__zoom_image">
+          <div class="image__container">
+            <img class="popup__image" src="" alt="" />
+            <p class="popup__image-name"></p>
+            <button class="popup__close-button close__image-button">
+              <img
+                src="/images/close-icon-s.png"
+                alt="Fechar janela da imagem"
+                class="close__image-button"
               />
             </button>
           </div>
         </div>
       </main>
+
       <div class="footer">
         <p class="footer__paragraph">© 2024 Around The U.S.</p>
       </div>

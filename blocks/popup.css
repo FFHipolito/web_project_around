@@ -91,10 +91,16 @@
   .popup__container {
     width: 238px;
     padding: 22px;
+    margin-top: 27px;
+    position: absolute;
   }
   .popup__close-button {
     top: -46px;
     right: 10px;
+    width: 26px;
+    height: 26px;
+  }
+  .close__card-image {
     width: 26px;
     height: 26px;
   }

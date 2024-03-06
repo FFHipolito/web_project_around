@@ -61,36 +61,17 @@ const editCardCloseButtonElement = document.querySelector(
 
 function handleCardFormSubmit(evt) {
   evt.preventDefault();
-
-  const titleInput = document.querySelector("#title");
-  const urlInput = document.querySelector("#url");
-
-  const newTitle = titleInput.value;
-  const newUrl = urlInput.value;
-
-  const titleInputCurrent = document.querySelector(".elements__title");
-  const urlInputCurrent = document.querySelector(".elements__image");
-
-  titleInputCurrent.textContent = newTitle;
-  urlInputCurrent.textContent = newUrl;
+  addNewCard();
   closeEditCardPopup();
+  editCardFormElement.reset();
 }
 
 function openEditCardPopup() {
-  const titleInput = document.querySelector("#title");
-  const urlInput = document.querySelector("#url");
-
-  const titleInputCurrent = document.querySelector(".elements__title");
-  const urlInputCurrent = document.querySelector(".elements__image");
-
-  titleInput.value = titleInputCurrent.textContent;
-  urlInput.value = urlInputCurrent.textContent;
-
   editCardPopupElement.classList.add("popup_opened");
-
-  editCardFormElement.addEventListener("submit", handleCardFormSubmit);
-  editCardCloseButtonElement.addEventListener("click", closeEditCardPopup);
 }
+
+editCardFormElement.addEventListener("submit", handleCardFormSubmit);
+editCardCloseButtonElement.addEventListener("click", closeEditCardPopup);
 
 function closeEditCardPopup() {
   editCardPopupElement.classList.remove("popup_opened");
@@ -101,9 +82,6 @@ function closeEditCardPopup() {
 editProfileButtonElement.addEventListener("click", openEditProfilePopup);
 
 editCardButtonElement.addEventListener("click", openEditCardPopup);
-
-const container = document.querySelector(".card__container");
-const addButton = document.querySelector(".input__card_action_button");
 
 const initialCards = [
   {
@@ -132,6 +110,9 @@ const initialCards = [
   },
 ];
 
+const container = document.querySelector(".card__container");
+const addButton = document.querySelector(".input__card_action_button");
+
 function addCard(card) {
   const cardTemplate = document
     .querySelector("#elements")
@@ -152,8 +133,30 @@ function addCard(card) {
       evt.target.classList.toggle("active");
     });
 
+  const elementImage = cardElement.querySelector(".elements__image");
+  const imageCloseButtonElement = document.querySelector(
+    ".close__image-button"
+  );
+
+  elementImage.addEventListener("click", function (evt) {
+    popupImage = document.querySelector(".popup__zoom_image");
+    const image = popupImage.querySelector(".popup__image");
+    const name = popupImage.querySelector(".popup__image-name");
+    image.src = card.link;
+    image.alt = card.name;
+    name.textContent = card.name;
+    popupImage.classList.add("popup__zoom_opened");
+  });
+
+  function closeImagePopup() {
+    popupImage.classList.remove("popup__zoom_opened");
+  }
+
+  imageCloseButtonElement.addEventListener("click", closeImagePopup);
+
   return cardElement;
 }
+
 for (const card of initialCards) {
   const cardItem = addCard(card);
   container.append(cardItem);
@@ -166,13 +169,5 @@ function addNewCard() {
     name: title.value,
     link: url.value,
   });
-  container.append(cardItem);
-  title.value = "";
-  url.value = "";
+  container.prepend(cardItem);
 }
-
-addButton.addEventListener("click", (event) => {
-  event.preventDefault();
-  addNewCard();
-  closeEditCardPopup();
-});
