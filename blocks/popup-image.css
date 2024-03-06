@@ -31,18 +31,13 @@
   .close__image-button {
     top: -30px;
     right: -25px;
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
   }
 
   .popup__container {
     top: 236px;
     max-width: 282px;
     max-height: 322px;
-  }
-
-  .close__image-button {
-    width: 30px;
-    height: 30px;
   }
 }
