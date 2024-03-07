@@ -110,12 +110,12 @@ const initialCards = [
   },
 ];
 
-const container = document.querySelector(".elements__container");
+const container = document.querySelector(".elements");
 const addButton = document.querySelector(".popup__input-submit_button");
 
 function addCard(card) {
   const cardTemplate = document
-    .querySelector("#elements")
+    .querySelector("#template")
     .content.querySelector(".elements__card");
   const cardElement = cardTemplate.cloneNode(true);
   cardElement.querySelector(".elements__image").setAttribute("src", card.link);
