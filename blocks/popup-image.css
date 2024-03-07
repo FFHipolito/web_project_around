@@ -4,7 +4,7 @@
   align-items: flex-start;
 }
 
-.popup_zoom_image-container {
+.popup-zoom-image__container {
   display: flex;
   flex-direction: column;
   max-width: 75vw;

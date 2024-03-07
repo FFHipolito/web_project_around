@@ -139,7 +139,7 @@ function addCard(card) {
   );
 
   elementImage.addEventListener("click", function (evt) {
-    popupImage = document.querySelector(".popup_zoom_image");
+    popupImage = document.querySelector(".popup-zoom-image");
     const image = popupImage.querySelector(".popup__image");
     const name = popupImage.querySelector(".popup__image-name");
     image.src = card.link;
