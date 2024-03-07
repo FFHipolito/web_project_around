@@ -4,7 +4,7 @@
   align-items: flex-start;
 }
 
-.image__container {
+.popup__image_container {
   display: flex;
   flex-direction: column;
   max-width: 75vw;
@@ -28,7 +28,7 @@
 }
 
 @media screen and (max-width: 683px) {
-  .close__image-button {
+  .popup__image-button {
     top: -30px;
     right: -25px;
     width: 30px;

@@ -54,9 +54,9 @@ function closeEditProfilePopup() {
 
 const editCardButtonElement = document.querySelector(".profile__addbutton");
 const editCardFormElement = document.querySelector(".popup__form-card");
-const editCardPopupElement = document.querySelector(".popup__card");
+const editCardPopupElement = document.querySelector(".popup_card");
 const editCardCloseButtonElement = document.querySelector(
-  ".close__card-button"
+  ".popup__close-button_card"
 );
 
 function handleCardFormSubmit(evt) {
@@ -110,8 +110,8 @@ const initialCards = [
   },
 ];
 
-const container = document.querySelector(".card__container");
-const addButton = document.querySelector(".input__card_action_button");
+const container = document.querySelector(".elements__container");
+const addButton = document.querySelector(".popup__input-submit_button");
 
 function addCard(card) {
   const cardTemplate = document
@@ -135,11 +135,11 @@ function addCard(card) {
 
   const elementImage = cardElement.querySelector(".elements__image");
   const imageCloseButtonElement = document.querySelector(
-    ".close__image-button"
+    ".popup__close-button_image"
   );
 
   elementImage.addEventListener("click", function (evt) {
-    popupImage = document.querySelector(".popup__zoom_image");
+    popupImage = document.querySelector(".popup_zoom_image");
     const image = popupImage.querySelector(".popup__image");
     const name = popupImage.querySelector(".popup__image-name");
     image.src = card.link;

@@ -1,4 +1,4 @@
-.card__container {
+.elements__container {
   margin: 50px auto 67px;
   display: flex;
   flex-direction: row;
@@ -86,7 +86,7 @@
 }
 
 @media only screen and (max-width: 683px) {
-  .card__container {
+  .elements__container {
     width: 85%;
     justify-content: center;
   }
