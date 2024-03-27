@@ -68,7 +68,7 @@
   opacity: 0.7;
 }
 
-.popup__input-submit_disabled {
+.popup__input-disabled {
   background-color: transparent;
   color: #000000;
   border: 1px solid #000000;
