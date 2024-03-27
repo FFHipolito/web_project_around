@@ -39,7 +39,7 @@
 }
 
 .popup__input-text {
-  margin-bottom: 30px;
+  margin-bottom: 5px;
   border: none;
   border-bottom: 1px solid black;
   padding: 13px 0 7px;
@@ -68,6 +68,14 @@
   opacity: 0.7;
 }
 
+.popup__input-submit_disabled {
+  background-color: transparent;
+  color: #000000;
+  border: 1px solid #000000;
+  opacity: 0.2;
+  cursor: default;
+}
+
 .popup__close-button {
   position: absolute;
   top: -40px;
@@ -85,6 +93,19 @@
 
 .popup__close-button:hover {
   opacity: 0.7;
+}
+
+.popup__input_type_error {
+  border-bottom: 1px solid red;
+}
+
+.popup__error {
+  visibility: hidden;
+  color: red;
+  font-size: 12px;
+}
+.popup__error_visible {
+  visibility: visible;
 }
 
 @media only screen and (max-width: 683px) {
