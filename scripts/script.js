@@ -10,8 +10,8 @@ const editProfileCloseButtonElement = document.querySelector(
 function handleProfileFormSubmit(evt) {
   evt.preventDefault();
 
-  const nameInput = document.querySelector("#name");
-  const jobInput = document.querySelector("#about");
+  const nameInput = document.querySelector("#name-input");
+  const jobInput = document.querySelector("#about-input");
 
   const newName = nameInput.value;
   const newJob = jobInput.value;
@@ -25,8 +25,8 @@ function handleProfileFormSubmit(evt) {
 }
 
 function openEditProfilePopup() {
-  const nameInput = document.querySelector("#name");
-  const jobInput = document.querySelector("#about");
+  const nameInput = document.querySelector("#name-input");
+  const jobInput = document.querySelector("#about-input");
 
   const nameInputCurrent = document.querySelector(".profile__title");
   const jobInputCurrent = document.querySelector(".profile__subtitle");
@@ -163,8 +163,8 @@ for (const card of initialCards) {
 }
 
 function addNewCard() {
-  const title = document.querySelector("#title");
-  const url = document.querySelector("#url");
+  const title = document.querySelector("#title-input");
+  const url = document.querySelector("#url-input");
   const cardItem = addCard({
     name: title.value,
     link: url.value,

@@ -39,7 +39,7 @@
               <p class="profile__subtitle">Explorador</p>
             </div>
           </div>
-          <button class="profile__addbutton" type="button">
+          <button class="button profile__addbutton" type="button">
             <img
               src="./images/mais.png"
               alt="Botão com o sinal de mais dentro"
@@ -63,10 +63,10 @@
         <div class="popup">
           <div class="popup__container">
             <p class="popup__title">Editar perfil</p>
-            <form class="popup__form">
+            <form class="popup__form" novalidate>
               <input
                 class="popup__input-text"
-                id="name"
+                id="name-input"
                 type="text"
                 name="name"
                 placeholder="Nome"
@@ -74,9 +74,10 @@
                 maxlength="40"
                 required
               />
+              <span class="popup__error"></span>
               <input
                 class="popup__input-text"
-                id="about"
+                id="about-input"
                 type="text"
                 name="about"
                 placeholder="Sobre mim"
@@ -84,9 +85,15 @@
                 maxlength="200"
                 required
               />
-              <input class="popup__input-submit" type="submit" value="Salvar" />
+              <span class="popup__error"></span>
+              <button
+                class="popup__input-submit popup__input-submit_disabled"
+                type="submit"
+              >
+                Salvar
+              </button>
             </form>
-            <button class="popup__close-button">
+            <button class="button popup__close-button">
               <img
                 src="/images/close-icon.png"
                 alt="Fechar janela editar perfil"
@@ -98,30 +105,42 @@
         <div class="popup popup_card">
           <div class="popup__container">
             <p class="popup__title">Novo local</p>
-            <form class="popup__form popup__form-card">
+            <form
+              class="popup__form popup__form-card"
+              name="formcard"
+              novalidate
+            >
               <input
                 class="popup__input-text"
-                id="title"
+                id="title-input"
                 type="text"
                 name="title"
                 placeholder="Título"
+                minlength="2"
+                maxlength="30"
                 required
               />
+              <span class="popup__error"></span>
               <input
                 class="popup__input-text"
-                id="url"
+                id="url-input"
                 type="url"
                 name="url"
                 placeholder="Link da imagem"
                 required
               />
-              <input
+              <span class="popup__error"></span>
+              <button
                 class="popup__input-submit popup__input-submit_button"
                 type="submit"
-                value="Criar"
-              />
+                disabled
+              >
+                Criar
+              </button>
             </form>
-            <button class="popup__close-button popup__close-button_card">
+            <button
+              class="popup__close-button popup__close-button_card popup__input-submit_disabled"
+            >
               <img
                 src="/images/close-icon.png"
                 alt="Fechar janela novo local"
@@ -152,5 +171,6 @@
     </div>
 
     <script src="./scripts/script.js"></script>
+    <script src="./scripts/validate.js"></script>
   </body>
 </html>
