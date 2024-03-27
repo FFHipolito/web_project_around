@@ -171,3 +171,9 @@ function addNewCard() {
   });
   container.prepend(cardItem);
 }
+
+document.onkeydown = function (event) {
+  if (event.key === "Escape") {
+    popup.classList.remove("popup_opened");
+  }
+};
