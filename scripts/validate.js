@@ -79,7 +79,7 @@ function resetValidation(form, config) {
   });
 }
 
-enableValidation({
+const enableValidationConfig = {
   formSelector: ".popup__form",
   inputSelector: ".popup__input-text",
   submitButtonSelector: ".popup__input-submit",
@@ -87,6 +87,6 @@ enableValidation({
   inputErrorClass: "popup__input_type_error",
   errorClass: "popup__error",
   errorClassVisible: "popup__error_visible",
-});
+};
 
-enableValidation(config);
+enableValidation(enableValidationConfig);
