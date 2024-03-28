@@ -172,8 +172,21 @@ function addNewCard() {
   container.prepend(cardItem);
 }
 
+editProfilePopupElement.addEventListener("click", (event) => {
+  if (event.target.classList.contains("popup")) {
+    editProfilePopupElement.classList.remove("popup_opened");
+  }
+});
+
+editCardPopupElement.addEventListener("click", (event) => {
+  if (event.target.classList.contains("popup_card")) {
+    editCardPopupElement.classList.remove("popup_opened");
+  }
+});
+
 document.onkeydown = function (event) {
   if (event.key === "Escape") {
-    popup.classList.remove("popup_opened");
+    editProfilePopupElement.classList.remove("popup_opened");
+    editCardPopupElement.classList.remove("popup_opened");
   }
 };
