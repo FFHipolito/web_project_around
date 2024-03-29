@@ -184,9 +184,17 @@ editCardPopupElement.addEventListener("click", (event) => {
   }
 });
 
+const editImagePopupElement = document.querySelector(".popup-zoom-image");
+editImagePopupElement.addEventListener("click", (event) => {
+  if (event.target.classList.contains("popup-zoom-image")) {
+    editImagePopupElement.classList.remove("popup__zoom_opened");
+  }
+});
+
 document.onkeydown = function (event) {
   if (event.key === "Escape") {
     editProfilePopupElement.classList.remove("popup_opened");
     editCardPopupElement.classList.remove("popup_opened");
+    editImagePopupElement.classList.remove("popup__zoom_opened");
   }
 };
