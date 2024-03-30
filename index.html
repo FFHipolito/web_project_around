@@ -14,11 +14,11 @@
   </head>
   <body>
     <div class="page">
-      <div class="header">
+      <header class="header">
         <img src="./Vector.png" alt="logo Around the US" class="header__logo" />
-      </div>
+      </header>
       <main class="content">
-        <div class="profile">
+        <section class="profile">
           <div class="profile__info">
             <img
               src="./images/pessoa.png"
@@ -46,7 +46,7 @@
               class="profile__addbutton-img"
             />
           </button>
-        </div>
+        </section>
 
         <div class="elements"></div>
         <template id="template">
@@ -60,7 +60,7 @@
           </div>
         </template>
 
-        <div class="popup">
+        <section class="popup">
           <div class="popup__container">
             <p class="popup__title">Editar perfil</p>
             <form class="popup__form" novalidate>
@@ -100,9 +100,9 @@
               />
             </button>
           </div>
-        </div>
+        </section>
 
-        <div class="popup popup_card">
+        <section class="popup popup_card">
           <div class="popup__container">
             <p class="popup__title">Novo local</p>
             <form
@@ -146,9 +146,9 @@
               />
             </button>
           </div>
-        </div>
+        </section>
 
-        <div class="popup popup-zoom-image">
+        <section class="popup popup-zoom-image">
           <div class="popup-zoom-image__container">
             <img class="popup__image" src="#" alt="Zoom da imagem" />
             <p class="popup__image-name"></p>
@@ -160,12 +160,12 @@
               />
             </button>
           </div>
-        </div>
+        </section>
       </main>
 
-      <div class="footer">
+      <footer class="footer">
         <p class="footer__paragraph">© 2024 Around The U.S.</p>
-      </div>
+      </footer>
     </div>
 
     <script src="./scripts/script.js"></script>
