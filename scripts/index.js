@@ -1,6 +1,10 @@
 import { FormValidator } from "./FormValidator.js";
 import { Card } from "./Card.js";
-import { resetValidationForm, enableValidationConfig } from "./utils.js";
+import {
+  closeEditCardPopup,
+  resetValidationForm,
+  enableValidationConfig,
+} from "./utils.js";
 
 const initialCards = [
   {
@@ -51,7 +55,6 @@ function submitPost(form) {
     link: form.url.value,
   };
   container.prepend(createPost(post));
-
   resetValidationForm(form);
 }
 

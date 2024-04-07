@@ -66,12 +66,11 @@ function handleCardFormSubmit(evt) {
 
 function openEditCardPopup() {
   editCardPopupElement.classList.add("popup_opened");
+  editCardFormElement.addEventListener("submit", handleCardFormSubmit);
+  editCardCloseButtonElement.addEventListener("click", closeEditCardPopup);
 }
 
-editCardFormElement.addEventListener("submit", handleCardFormSubmit);
-editCardCloseButtonElement.addEventListener("click", closeEditCardPopup);
-
-function closeEditCardPopup() {
+function closeEditCardPopup(evt) {
   editCardPopupElement.classList.remove("popup_opened");
   editCardCloseButtonElement.removeEventListener("click", closeEditCardPopup);
   editCardFormElement.removeEventListener("submit", handleCardFormSubmit);
@@ -93,6 +92,7 @@ editCardPopupElement.addEventListener("click", (event) => {
   }
 });
 
+const buttonClose = document.querySelector(".popup__close-button_image");
 const editImagePopupElement = document.querySelector(".popup-zoom-image");
 editImagePopupElement.addEventListener("click", (event) => {
   if (event.target.classList.contains("popup-zoom-image")) {
@@ -104,6 +104,10 @@ function openImageZoomPopup(popup) {
   popup.classList.contains("popup-zoom-image");
   popup.classList.add("popup__zoom_opened");
 }
+
+buttonClose.addEventListener("click", () => {
+  editImagePopupElement.classList.remove("popup__zoom_opened");
+});
 
 document.onkeydown = function (event) {
   if (event.key === "Escape") {
@@ -147,4 +151,9 @@ const enableValidationConfig = {
   errorClassVisible: "popup__error_visible",
 };
 
-export { openImageZoomPopup, resetValidationForm, enableValidationConfig };
+export {
+  closeEditCardPopup,
+  openImageZoomPopup,
+  resetValidationForm,
+  enableValidationConfig,
+};
