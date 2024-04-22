@@ -1,7 +1,7 @@
-import { FormValidator } from "./FormValidator.js";
-import Card from "./Card.js";
-import { resetValidationForm, enableValidationConfig } from "./utils.js";
-import Section from "./Section.js";
+import FormValidator from "../FormValidator.js";
+import Card from "../Card.js";
+import { resetValidationForm, enableValidationConfig } from "../utils/utils.js";
+import Section from "../Section.js";
 
 const initialCards = [
   {

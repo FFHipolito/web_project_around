@@ -1,9 +1,8 @@
-import { openImageZoomPopup } from "./utils.js";
-
 export default class Card {
-  constructor(data, cardSelector) {
+  constructor(data, cardSelector, handleCardClick) {
     this._data = data;
     this._cardSelector = cardSelector;
+    this._handleCardClick = handleCardClick;
   }
 
   _getTemplate() {
@@ -62,8 +61,10 @@ export default class Card {
       this._handleTrashButton();
     });
 
-    this._cardImage.addEventListener("click", () => {
-      this._handleOpenPopup();
-    });
+    if (this._handleCardClick) {
+      this._cardImage.addEventListener("click", () => {
+        this._handleCardClick(this._data);
+      });
+    }
   }
 }
