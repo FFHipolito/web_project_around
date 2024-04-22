@@ -1,6 +1,6 @@
 import { openImageZoomPopup } from "./utils.js";
 
-export class Card {
+export default class Card {
   constructor(data, cardSelector) {
     this._data = data;
     this._cardSelector = cardSelector;

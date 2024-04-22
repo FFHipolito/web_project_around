@@ -151,9 +151,4 @@ const enableValidationConfig = {
   errorClassVisible: "popup__error_visible",
 };
 
-export {
-  closeEditCardPopup,
-  openImageZoomPopup,
-  resetValidationForm,
-  enableValidationConfig,
-};
+export { openImageZoomPopup, resetValidationForm, enableValidationConfig };
