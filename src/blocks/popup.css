@@ -17,6 +17,7 @@
 
 .popup__container {
   position: relative;
+  top: 340px;
   display: flex;
   flex-direction: column;
   border-radius: 10px;
@@ -104,6 +105,7 @@
   color: red;
   font-size: 12px;
 }
+
 .popup__error_visible {
   visibility: visible;
 }
@@ -115,16 +117,19 @@
     margin-top: 27px;
     position: absolute;
   }
+
   .popup__close-button {
     top: -46px;
     right: 10px;
     width: 26px;
     height: 26px;
   }
+
   .popup__card-image {
     width: 26px;
     height: 26px;
   }
+
   .popup__title {
     font-size: 18px;
   }

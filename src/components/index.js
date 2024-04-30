@@ -62,7 +62,7 @@ const popupAddForm = new PopupWithForm({
       name: document.querySelector(".popup__input-text_title").value,
       image: document.querySelector(".popup__input-text_url").value,
     };
-    const newCard = new Card(dataCard, "#template");
+    const newCard = new Card(dataCard, "#template", popupWithImage);
     const cardElement = newCard.generateCard();
     document.querySelector(".elements").prepend(cardElement);
   },

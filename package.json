@@ -1,0 +1,32 @@
+{
+  "name": "web_project_around",
+  "version": "1.0.0",
+  "description": "A página do Tripleten web_project_around é um projeto no programa de desenvolvedor de software na TripleTen. Ele é criado usando HTML, CSS (avançados) e JavaScript, com base em um design disponibilizado no Figma e estará disponível no GitHub e GitHub Pages.",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --mode production",
+    "dev": "webpack serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FFHipolito/web_project_around.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FFHipolito/web_project_around/issues"
+  },
+  "homepage": "https://github.com/FFHipolito/web_project_around#readme",
+  "dependencies": {
+    "core-js": "^3.37.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.24.5",
+    "@babel/preset-env": "^7.24.5",
+    "babel-loader": "^9.1.3",
+    "html-webpack-plugin": "^5.6.0",
+    "webpack": "^5.91.0",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^5.0.4"
+  }
+}
