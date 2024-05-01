@@ -1,17 +1,18 @@
-import Card from "./Card.js";
-import FormValidator from "./FormValidator.js";
-import PopupWithImage from "./PopupWithImage.js";
-import PopupWithForm from "./PopupWithForm.js";
-import Section from "./Section.js";
-import { initialCards } from "./utils.js";
-import UserInfo from "./UserInfo.js";
+import "./index.css";
+import Card from "../components/Card.js";
+import FormValidator from "../components/FormValidator.js";
+import PopupWithImage from "../components/PopupWithImage.js";
+import PopupWithForm from "../components/PopupWithForm.js";
+import Section from "../components/Section.js";
+import { initialCards } from "../components/utils.js";
+import UserInfo from "../components/UserInfo.js";
 import {
   formAdd,
   formProfileElement,
   openFormButton,
   openAddButton,
   selectors,
-} from "./utils.js";
+} from "../components/utils.js";
 
 const popupSelector = ".popup-zoom-image";
 const imageElement = document.querySelector(".popup__image");
