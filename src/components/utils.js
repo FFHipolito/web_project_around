@@ -7,35 +7,37 @@ export const selectors = {
   nameSelector: ".profile__title",
   aboutSelector: ".profile__subtitle",
 };
+
+import imgLagoAmanhecer from "../images/lago-amanhecer.png";
+import imgLagoFrio from "../images/lago-frio.png";
+import imgEntardecer from "../images/entardecer.png";
+import imgLagoANoite from "../images/lago-a-noite.png";
+import imgLagoCalmo from "../images/lago-calmo.png";
+import imgLagoNasMontanhas from "../images/lago-nas-montanhas.png";
+
 export const initialCards = [
   {
     name: "Vale de Yosemite",
-    image:
-      "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_yosemite.jpg",
+    image: imgLagoAmanhecer,
   },
   {
     name: "Lago Louise",
-    image:
-      "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_lake-louise.jpg",
+    image: imgLagoFrio,
   },
   {
     name: "Montanhas Carecas",
-    image:
-      "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_bald-mountains.jpg",
+    image: imgEntardecer,
   },
   {
     name: "Latemar",
-    image:
-      "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_latemar.jpg",
+    image: imgLagoANoite,
   },
   {
     name: "Parque Nacional da Vanoise",
-    image:
-      "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_vanoise.jpg",
+    image: imgLagoCalmo,
   },
   {
     name: "Lago di Braies",
-    image:
-      "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_lago.jpg",
+    image: imgLagoNasMontanhas,
   },
 ];
