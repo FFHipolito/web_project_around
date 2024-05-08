@@ -4,6 +4,7 @@ import FormValidator from "../components/FormValidator.js";
 import PopupWithImage from "../components/PopupWithImage.js";
 import PopupWithForm from "../components/PopupWithForm.js";
 import Section from "../components/Section.js";
+import Api from "../components/Api.js";
 import { initialCards } from "../components/utils.js";
 import UserInfo from "../components/UserInfo.js";
 import {
@@ -13,6 +14,28 @@ import {
   openAddButton,
   selectors,
 } from "../components/utils.js";
+
+const api = new Api({
+  baseUrl: "https://around.nomoreparties.co/v1/web-ptbr-cohort-10",
+  headers: {
+    authorization: "e00364f1-af4a-4601-a0ac-2228485dc1a7",
+    "Content-Type": "application/json",
+  },
+});
+
+api
+  .getUser()
+  .then((result) => {
+    const userInformationFromServer = result;
+
+    userInfo.setUserInfo(
+      userInformationFromServer.name,
+      userInformationFromServer.about
+    );
+  })
+  .catch((err) => {
+    console.log(err);
+  });
 
 const popupSelector = ".popup-zoom-image";
 const imageElement = document.querySelector(".popup__image");
@@ -26,19 +49,19 @@ const popupWithImage = new PopupWithImage(
 
 popupWithImage.setEventListeners();
 
-const cardSection = new Section(
-  {
-    items: initialCards,
-    renderer: (item) => {
-      const newCard = new Card(item, "#template", popupWithImage);
-      const cardElement = newCard.generateCard();
-      cardSection.addItem(cardElement);
-    },
-  },
-  ".elements"
-);
+// const cardSection = new Section(
+//   {
+//     items: initialCards,
+//     renderer: (item) => {
+//       const newCard = new Card(item, "#template", popupWithImage);
+//       const cardElement = newCard.generateCard();
+//       cardSection.addItem(cardElement);
+//     },
+//   },
+//   ".elements"
+// );
 
-cardSection.render();
+// cardSection.render();
 
 const userInfo = new UserInfo(selectors);
 
