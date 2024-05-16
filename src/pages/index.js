@@ -141,7 +141,7 @@ const editAvatar = new PopupWithForm({
   popupSelector: ".popup_edit",
   submitCallback: ({ image }) => {
     api.editAvatar({
-      avatar: document.querySelector(".popup__form-input_link").value,
+      avatar: document.querySelector(".popup__form-input-link").value,
     });
     const { name, about } = userInfo.getUserInfo();
     userInfo.setUserInfo(name, about, image);
