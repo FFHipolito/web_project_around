@@ -41,7 +41,7 @@
 .elements__group {
   width: 246px;
   height: 23px;
-  margin: 25px 15px 31px 21px;
+  margin: 25px 0px 0px 21px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -76,6 +76,14 @@
 
 .active {
   background-image: url("../images/like-active.png");
+}
+
+.elements__like-count {
+  margin-left: 253px;
+  color: black;
+  font-size: 13px;
+  font-family: Inter;
+  font-weight: 400;
 }
 
 @media only screen and (max-width: 1000px) {

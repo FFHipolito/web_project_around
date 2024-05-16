@@ -23,15 +23,12 @@
       <main class="content">
         <section class="profile">
           <div class="profile__info">
-            <img
-              src="<%=require('./images/pessoa.png')%>"
-              alt="Imagem
-            de perfil da pessoa"
-              class="profile__image"
-            />
+            <button type="button" class="profile__avatar-edit">
+              <img class="profile__image" src="#" alt="Foto do usuário" />
+            </button>
             <div class="profile__info-container">
               <div class="profile__title-container">
-                <h1 class="profile__title">Jacques Cousteau</h1>
+                <h1 class="profile__title"></h1>
                 <button class="profile__title-button" type="button">
                   <img
                     src="<%=require('./images/caneta.png')%>"
@@ -40,7 +37,7 @@
                   />
                 </button>
               </div>
-              <p class="profile__subtitle">Explorador</p>
+              <p class="profile__subtitle"></p>
             </div>
           </div>
           <button class="button profile__addbutton" type="button">
@@ -59,8 +56,13 @@
             <img class="elements__image" src="#" alt="Imagem do local" />
             <div class="elements__group">
               <h2 class="elements__title"></h2>
-              <button class="elements__like-button" type="submit"></button>
+              <button
+                id="likeButton"
+                class="elements__like-button"
+                type="submit"
+              ></button>
             </div>
+            <span class="elements__like-count">""</span>
           </div>
         </template>
 
@@ -163,6 +165,45 @@
                 class="popup__image-button"
               />
             </button>
+          </div>
+        </section>
+
+        <section class="popup popup_edit">
+          <div class="popup__container">
+            <button class="popup__close-button" type="button">
+              <img
+                class="popup__close-icon-img popup__close"
+                src="<%=require('./images/close-icon.png')%>"
+                alt="Fechar popup"
+              />
+            </button>
+            <form class="popup__form popup__form-avatar" novalidate>
+              <h2 class="popup__title">Alterar a foto do perfil</h2>
+              <input
+                class="popup__input-text popup__form-input_link"
+                id="avatar"
+                placeholder="Link da Imagem"
+                type="url"
+                name="image"
+                required
+              />
+              <span class="popup__error"></span>
+              <button class="popup__input-submit" type="submit">Salvar</button>
+            </form>
+          </div>
+        </section>
+
+        <section class="popup popup_delete">
+          <div class="popup__container">
+            <button class="popup__close-button" type="button">
+              <img
+                class="popup__close-icon-img"
+                src="<%=require('./images/close-icon.png')%>"
+                alt="Fechar popup"
+              />
+            </button>
+            <h2 class="popup__title">Tem certeza?</h2>
+            <button class="popup__input-submit" type="submit">Sim</button>
           </div>
         </section>
       </main>
